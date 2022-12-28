@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import Axios from 'axios';
-import Products from "./products";
 
 function Admin() {
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
-    const [productList, setProductList] = useState([])
+    const [image, setImage] = useState('');
+    // const [productList, setProductList] = useState([])
 
-    useEffect(() => {
-        Axios.get('http://localhost:3001/api/get').then((response) => {
-            setProductList(response.data)
-        })
-    }, [])
+    // useEffect(() => {
+    //     Axios.get('http://localhost:3001/api/get').then((response) => {
+    //         setProductList(response.data)
+    //     })
+    // }, [])
 
     const handleAdd = (e) => {
         e.preventDefault()
@@ -21,6 +21,7 @@ function Admin() {
             title: title,
             description: description,
             price: price,
+            image: image,
         }).then(() => {
             alert("successfull post")
         })
@@ -34,13 +35,9 @@ function Admin() {
             <input type="text" name="description" onChange={(e) => {setDescription(e.target.value)}}></input>
             <label>Price</label>
             <input type="number" name="price" onChange={(e) => {setPrice(e.target.value)}}></input>
+            <label>Image</label>
+            <input type="file" name="image" onChange={(e) => {setImage(e.target.value)}}></input>
             <button onClick={handleAdd}>Add</button>
-            <div>
-                {productList.map((product) => {
-                    return <h1>{product.title}</h1>
-                })}
-            </div>
-            <Products productList={productList}/>
         </div>
     )
 }

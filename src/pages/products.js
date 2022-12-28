@@ -1,9 +1,10 @@
 import React from "react";
+import GetProducts from "../components/getProducts";
 
-function Products({ productList }) {
+function Products() {
     return(
-        <div>
-            <h1>hej</h1>
+        <div className="products">
+            <GetProducts />
         </div>
     )
 }
