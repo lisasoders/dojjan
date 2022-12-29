@@ -33,6 +33,28 @@
   /* cursor: pointer; */
 }
 
+/* STARTPAGE */
+
+.startpage-wrapper {
+ 
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 40px;
+}
+
+.left-column {
+
+}
+
+.right-column {
+
+}
+
+.startpage-img {
+  width: 300px;
+}
+
 /* PRODUCT PAGE */
 
 .products {

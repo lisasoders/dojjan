@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Axios from 'axios';
+import RegisterAdmin from "../components/registerAdmin";
 
 function Admin() {
 
@@ -29,6 +30,9 @@ function Admin() {
 
     return(
         <div>
+            <div className="RegLog-admin">
+                <RegisterAdmin />
+            </div>
             <label>Title</label>
             <input type="text" name="title" onChange={(e) => {setTitle(e.target.value)}}></input>
             <label>description</label>
