@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,100;1,300&display=swap');
 
+.App {
+  /* background-color: #e0e2db; */
+}
+
 /* HEADER */
 
 * {
@@ -7,7 +11,7 @@
 }
 
 .header-wrapper {
-  background-color: #a5a58d;
+  background-color: #889696;
   padding: 10px;
   height: 50px;
   display: flex;
@@ -36,23 +40,30 @@
 /* STARTPAGE */
 
 .startpage-wrapper {
- 
-  width: 80%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
-  gap: 40px;
+  margin-top: 20px;
 }
 
-.left-column {
+.product-info {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: #e0e2db;
+  }
 
+
+.startpage-text {
+  width: 50%;
 }
 
-.right-column {
-
+.startpage-text > p {
+  padding: 15px;
 }
 
 .startpage-img {
-  width: 300px;
+  width: 50%;
 }
 
 /* PRODUCT PAGE */
