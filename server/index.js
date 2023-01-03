@@ -15,6 +15,8 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+/* POST */
+
 app.post("/api/post", (req, res) => {
 
     const title = req.body.title;
@@ -29,6 +31,8 @@ app.post("/api/post", (req, res) => {
     })
 })
 
+/* REGISTER */
+
 app.post("/admin/register", (req, res) => {
 
     const username = req.body.username;
@@ -40,6 +44,8 @@ app.post("/admin/register", (req, res) => {
 
     })
 })
+
+/* LOGIN */
 
 app.post("/admin/login", (req, res) => {
 
@@ -53,6 +59,8 @@ app.post("/admin/login", (req, res) => {
     })
 })
 
+/* GET */
+
 app.get('/api/get', (req, res) => {
     const sqlGet = "SELECT * FROM products";
     db.query(sqlGet, (err, result) => {
@@ -60,6 +68,34 @@ app.get('/api/get', (req, res) => {
 
     })
 })
+
+app.get('/api/getId3', (req, res) => {
+    const sqlGet = "SELECT * FROM products WHERE id = 3";
+    db.query(sqlGet, (err, result) => {
+        res.send(result);
+
+    })
+})
+
+app.get('/api/getId7', (req, res) => {
+    const sqlGet = "SELECT * FROM products WHERE id = 7";
+    db.query(sqlGet, (err, result) => {
+        res.send(result);
+
+    })
+})
+
+/* DELETE */
+
+app.delete('/api/delete', (req, res) => {
+    const title = req.body.title
+    const sqlDelete = "DELETE FROM products where title = ?";
+    db.query(sqlDelete, title, (err, result) => {
+        res.send(result);
+
+    })
+})
+
 
 app.get('/', (req, res) => {
     // const sqlInsert = "INSERT INTO products (title, description, price) VALUES ('adidas', 'black', '220');"
