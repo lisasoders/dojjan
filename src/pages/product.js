@@ -1,36 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useParams } from "react";
 import Axios from 'axios';
 import dummyImg from '../image/dummyImg.png';
 
-function GetProducts() {
 
-    const [productList, setProductList] = useState([]);
+function Product() {
+
+    const productId = useParams();
+
+    const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        Axios.get('http://localhost:3001/api/get').then((response) => {
-            setProductList(response.data)
+        Axios.get(`http://localhost:3001/api/get/${productId}`).then((response) => {
+            setProduct(response.data)
         })
-    }, [])
-
-    const handleClick = (e) => {
-        // e.preventDefault();
-        console.log("hej")
-    }
+    }, [productId])
 
     return(
         <div className="product-wrapper">
-                {productList.map((product) => {
+                {product.map((product) => {
                     return(
                         <div className="card" key={product.id}>
                             <h2>{product.title}</h2>
                             <img alt="shoe" src={dummyImg} />
                             <p className="price"> {product.price} kr</p>
                             <h4> {product.description} </h4>
-                            <button onClick={(e) => {handleClick(e)}}>Add to cart</button>
                         </div>
                 )})}
         </div>
     )
 }
 
-export default GetProducts;
+export default Product;
