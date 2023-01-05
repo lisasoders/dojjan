@@ -124,3 +124,36 @@
  align-items: center;
 }
 
+/* CART */
+
+.cart-wrapper {
+
+}
+
+.product-cart {
+
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.empty-cart {
+  text-align: center;
+  height: 50vh;
+  padding-top: 30px;
+  font-size: 30px;
+}
+
+.cart-img {
+  width: 100px;
+}
+
+.cart-title {
+  text-align: center;
+}
+

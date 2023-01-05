@@ -23,7 +23,7 @@ function Products({addProduct}) {
                 {productList.map((product) => {
                     return(
                         <div className="card" key={product.id}>
-                            <Link to={`/api/get/${product.id}`}><h2>{product.title}</h2></Link>
+                            <Link to={`/product/${product.id}`}><h2>{product.title}</h2></Link>
                             <img alt="shoe" src={dummyImg} />
                             <p className="price"> {product.price} kr</p>
                             <h4> {product.description} </h4>

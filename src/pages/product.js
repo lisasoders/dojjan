@@ -5,21 +5,25 @@ import dummyImg from '../image/dummyImg.png';
 
 function Product() {
 
-    const productId = useParams();
+    // const {productId} = useParams();
 
     const [product, setProduct] = useState([]);
 
-    useEffect(() => {
-        Axios.get(`http://localhost:3001/api/get/${productId}`).then((response) => {
-            setProduct(response.data)
-        })
-    }, [productId])
+    // console.log(productId, "test")
+
+
+    // useEffect(() => {
+    //     Axios.get(`http://localhost:3001/api/get/${productId}`).then((response) => {
+    //         setProduct(response.data)
+    //     })
+    // }, [productId])
 
     return(
         <div className="product-wrapper">
                 {product.map((product) => {
                     return(
                         <div className="card" key={product.id}>
+                            {/* <p>{productId}</p> */}
                             <h2>{product.title}</h2>
                             <img alt="shoe" src={dummyImg} />
                             <p className="price"> {product.price} kr</p>

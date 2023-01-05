@@ -6,6 +6,7 @@ import Products from "../pages/products";
 import Contact from "../pages/contact";
 import Cart from "../pages/cart";
 import Admin from "../pages/admin";
+import Product from "../pages/product";
 
 function Header({product}) {
 
@@ -39,7 +40,7 @@ function Header({product}) {
                 <Route path="/contact" element={<Contact />}></Route>
                 <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />}></Route>
                 <Route path="/admin" element={<Admin />}></Route>
-                <Route path="/product/:id" exact component={product} />
+                <Route path="/product/:id" element={<Product />} />
             </Routes>
         </Router>
     )
