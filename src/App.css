@@ -98,7 +98,7 @@
   color: grey;
 }
 
-.card button {
+/* .card button {
   padding: 12px;
   color: white;
   background-color: #000;
@@ -110,7 +110,22 @@
 
 .card button:hover {
   opacity: 0.5;
+} */
+
+.product-img-svg {
+  position: relative;
 }
+
+.product-img-svg > div {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 10px;
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+}
+
 
 /* FOOTER */ 
 

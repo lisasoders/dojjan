@@ -25,12 +25,15 @@ function Products({addProduct}) {
                 {productList.map((product) => {
                     return(
                         <div className="card" key={product.id}>
-                             <img className="products-img" alt="shoe" src={dummyImg} />
-                                <div className="cart-icon"><BsCart2 /></div>
+                            <div className="product-img-svg">
+                                <img className="products-img" alt="shoe" src={dummyImg} />
+                                <div onClick={() => addToCart(product)}><BsCart2 /></div>
+                                
+                            </div>
                             <Link to={`/product/${product.id}`} className="products-link"><h2>{product.title}</h2></Link>
                             <p className="price"> {product.price} kr</p>
                             {/* <h4> {product.description} </h4> */}
-                            <button onClick={() => addToCart(product)}>Add to cart</button>
+                          
                         </div>
                 )})}
         </div>
