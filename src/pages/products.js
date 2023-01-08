@@ -28,7 +28,6 @@ function Products({addProduct}) {
                             <div className="product-img-svg">
                                 <img className="products-img" alt="shoe" src={dummyImg} />
                                 <div onClick={() => addToCart(product)}><BsCart2 /></div>
-                                
                             </div>
                             <Link to={`/product/${product.id}`} className="products-link"><h2>{product.title}</h2></Link>
                             <p className="price"> {product.price} kr</p>

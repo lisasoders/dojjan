@@ -7,6 +7,9 @@ import Contact from "../pages/contact";
 import Cart from "../pages/cart";
 import Admin from "../pages/admin";
 import Product from "../pages/product";
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { BsCart2 } from 'react-icons/bs';
+
 
 function Header({product}) {
 
@@ -25,13 +28,25 @@ function Header({product}) {
     return(
         <Router>
             <div className="header-wrapper">
-                <h1>Dojjan</h1>
-                <div className="link-wrapper">
+                <div className="hamburger-menu">
+                <RxHamburgerMenu />
+                <div className="dropdown-content">
+                    <Link to="/">Startsida</Link>
+                    <Link to="/products">Produkter</Link>
+                    <Link to="/contact">Kontakt</Link>
+                    <Link to="/admin">Admin</Link>
+                </div>
+                </div>
+                <h1>DOJJAN</h1>
+                {/* <div className="link-wrapper">
                     <Link to="/">Startsida</Link>
                     <Link to="/products">Produkter</Link>
                     <Link to="/contact">Kontakt</Link>
                     <Link to="/cart">Varukorg</Link>
                     <Link to="/admin">Admin</Link>
+                </div> */}
+                <div className="header-icon">
+                    <Link to="/cart"><BsCart2 /></Link>
                 </div>
             </div>
             <Routes>

@@ -6,23 +6,58 @@
 
 /* HEADER */
 
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  gap: 10px;
+}
+
+.dropdown-content > a {
+  text-decoration: none;
+  color: gray;
+}
+
+.hamburger-menu:hover .dropdown-content {
+  display: block;
+  display: flex;
+}
+
 * {
   font-family: 'Montserrat', sans-serif;
 }
 
 .header-wrapper {
-  background-color: #889696;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  /* background-color: #736f72;
   padding: 10px;
   height: 50px;
   display: flex;
   justify-content: center;
   position: relative;
-  align-items: center;
+  align-items: center; */
+}
+
+.hamburger-menu > svg {
+  width: 1.5em;
+  height: 1.5em;
 }
 
 .header-wrapper > h1 {
-  position: absolute;
-  left: 20px;
+padding-left: 20px;
 }
 
 .link-wrapper {
@@ -35,6 +70,16 @@
   text-decoration: none;
   color: black;
   /* cursor: pointer; */
+}
+
+.header-icon {
+  padding-left: 80%;
+}
+
+.header-icon > a > svg {
+  height: 1.5em;
+  width: 1.5em;
+  color: grey;
 }
 
 /* STARTPAGE */
