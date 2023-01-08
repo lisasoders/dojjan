@@ -71,7 +71,8 @@ app.get('/api/get', (req, res) => {
 
 /* SINGLE GET */
 
-app.get('/api/get/id', (req, res) => {
+app.get('/api/get/:id', (req, res) => {
+    // const { id } = req.params;
     const sqlGet = "SELECT * FROM products WHERE id = ?";
     db.query(sqlGet, (err, result) => {
         res.send(result);

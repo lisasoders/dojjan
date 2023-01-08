@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Axios from 'axios';
 import dummyImg from '../image/dummyImg.png';
 import {Link} from 'react-router-dom';
+import { BsCart2 } from 'react-icons/bs';
+
 
 function Products({addProduct}) {
 
@@ -23,10 +25,11 @@ function Products({addProduct}) {
                 {productList.map((product) => {
                     return(
                         <div className="card" key={product.id}>
-                            <Link to={`/product/${product.id}`}><h2>{product.title}</h2></Link>
-                            <img alt="shoe" src={dummyImg} />
+                             <img className="products-img" alt="shoe" src={dummyImg} />
+                                <div className="cart-icon"><BsCart2 /></div>
+                            <Link to={`/product/${product.id}`} className="products-link"><h2>{product.title}</h2></Link>
                             <p className="price"> {product.price} kr</p>
-                            <h4> {product.description} </h4>
+                            {/* <h4> {product.description} </h4> */}
                             <button onClick={() => addToCart(product)}>Add to cart</button>
                         </div>
                 )})}
