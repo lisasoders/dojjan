@@ -28,7 +28,6 @@ function Product({id}) {
                             <img alt="shoe" src={dummyImg} />
                             <p className="price"> {product.price} kr</p>
                             <h4> {product.description} </h4>
-                            <h1>HEEEEJ</h1>
                         </div>
                 )})}
         </div>
