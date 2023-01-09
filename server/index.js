@@ -54,7 +54,14 @@ app.post("/admin/login", (req, res) => {
 
     const sqlInsert = "SELECT * FROM admins WHERE username = ? AND password = ?";
     db.query(sqlInsert, [username, password], (err, result) => {
-        console.log(result);
+        if (err) {
+            res.send({err: err})
+        }
+        if (result.length > 0) {
+            res.send(result);
+        } else {
+            res.send({ message: "fel användarnamn/lösenord!"})
+        }
 
     })
 })
@@ -72,10 +79,10 @@ app.get('/api/get', (req, res) => {
 /* SINGLE GET */
 
 app.get('/api/get/:id', (req, res) => {
-    // const { id } = req.params;
+    const { id } = req.params;
     const sqlGet = "SELECT * FROM products WHERE id = ?";
     db.query(sqlGet, (err, result) => {
-        res.send(result);
+        res.send(id);
 
     })
 })

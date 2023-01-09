@@ -9,6 +9,7 @@ function RegisterAdmin() {
     const [loginAdminUsername, setLoginAdminUsername] = useState('')
     const [loginAdminPassword, setLoginAdminPassword] = useState('')
     const [loggedIn, setLoggedIn] = useState(false)
+    const [statusLoggedIn, setStatusLoggedIn] = useState("");
 
     const handleRegister = (e) => {
         Axios.post('http://localhost:3001/admin/register', {
@@ -24,7 +25,11 @@ function RegisterAdmin() {
             username: loginAdminUsername, 
             password: loginAdminPassword,
         }).then((response) => {
-            console.log(response)
+            if (response.data.message){
+                setStatusLoggedIn(response.data.message)
+            } else {
+                setLoggedIn(response.data[0].username)
+            }
         })
     }
 
@@ -47,27 +52,11 @@ function RegisterAdmin() {
                     <input type="text"  onChange={(e) => {setLoginAdminUsername(e.target.value)}}></input>
                     <label>Password</label>
                     <input type="password"  onChange={(e) => {setLoginAdminPassword(e.target.value)}}></input>
-                    <button onClick={() => {handleLogin(); setLoggedIn(true)}}>Login</button>
+                    <button onClick={() => {handleLogin()}}>Login</button>
                 </div>
+                <p>{statusLoggedIn}</p>
             </div>
             }
-            
-            {/* <div className="register">
-                <h1>Register</h1>
-                <label>Username</label>
-                <input type="text" onChange={(e) => {setUsernameAdmin(e.target.value)}}></input>
-                <label>Password</label>
-                <input type="password" onChange={(e) => {setPasswordAdmin(e.target.value)}}></input>
-                <button onClick={(e) => {handleRegister(e); setLoggedIn(e)}}>Register</button>
-            </div>
-            <div className="login">
-            <h1>Login</h1>
-                <label>Username</label>
-                <input type="text"  onChange={(e) => {setLoginAdminUsername(e.target.value)}}></input>
-                <label>Password</label>
-                <input type="text"  onChange={(e) => {setLoginAdminPassword(e.target.value)}}></input>
-                <button onClick={() => {handleLogin(); setLoggedIn(true)}}>Login</button>
-            </div> */}
         </div>
     )
 }

@@ -14,14 +14,13 @@ import { BsCart2 } from 'react-icons/bs';
 function Header({product}) {
 
     const [cartItems, setCartItems] = useState([]);
+    const [productsInCart, setProductsInCart] = useState([]);
 
     const addProduct= (addItems) =>{
 
-
-
         setCartItems([
           ...cartItems,
-          addItems 
+          addItems,  
         ])
         }
 
