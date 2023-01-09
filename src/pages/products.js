@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import { BsCart2 } from 'react-icons/bs';
 
 
-function Products({addProduct}) {
+function Products({addProduct, cartItems, setCartItems}) {
 
     const [productList, setProductList] = useState([]);
 
@@ -20,6 +20,12 @@ function Products({addProduct}) {
     console.log(product);
   }
 
+  const deletedProduct = (cartItem) => {
+    let deletedProduct = Object.values(cartItems).filter(i => i.id !== cartItem.id)
+        setProductList(deletedProduct)
+        console.log(cartItem.id);
+  }
+
     return(
         <div className="product-wrapper">
                 {productList.map((product) => {
@@ -32,7 +38,7 @@ function Products({addProduct}) {
                             <Link to={`/product/${product.id}`} className="products-link"><h2>{product.title}</h2></Link>
                             <p className="price"> {product.price} kr</p>
                             {/* <h4> {product.description} </h4> */}
-                          
+                            <p onClick={() => deletedProduct(product)}>ta bort produkt</p>
                         </div>
                 )})}
         </div>

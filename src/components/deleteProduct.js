@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Axios from 'axios';
 
-function DeleteProducts( {title, description, price, image} ) {
+function DeleteProducts( {title, description, price, image, loggedIn, setLoggedIn} ) {
 
     const deleteProduct = () => {
         Axios.delete(`http://localhost:3001/api/delete/${title}`)

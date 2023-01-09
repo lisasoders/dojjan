@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Axios from "axios";
 import CreateProducts from "./createProducts";
+import DeleteProduct from "./deleteProduct";
 
 function RegisterAdmin() {
 
@@ -54,9 +55,9 @@ function RegisterAdmin() {
                     <input type="password"  onChange={(e) => {setLoginAdminPassword(e.target.value)}}></input>
                     <button onClick={() => {handleLogin()}}>Login</button>
                 </div>
-                <p>{statusLoggedIn}</p>
             </div>
             }
+            <DeleteProduct loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         </div>
     )
 }

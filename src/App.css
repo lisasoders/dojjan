@@ -200,7 +200,7 @@ padding-left: 20px;
 
 .cart-item {
   display: flex;
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
   justify-content: space-around;
   align-items: center;
   margin: 20px;

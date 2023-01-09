@@ -9,6 +9,7 @@ import Admin from "../pages/admin";
 import Product from "../pages/product";
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { BsCart2 } from 'react-icons/bs';
+import DeleteProduct from "./deleteProduct";
 
 
 function Header({product}) {
@@ -50,7 +51,7 @@ function Header({product}) {
             </div>
             <Routes>
                 <Route path="/" element={<Startpage />}></Route>
-                <Route path="/products" element={<Products addProduct={addProduct} />}></Route>
+                <Route path="/products" element={<Products addProduct={addProduct} cartItems={cartItems} setCartItems={setCartItems} />}></Route>
                 <Route path="/contact" element={<Contact />}></Route>
                 <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />}></Route>
                 <Route path="/admin" element={<Admin />}></Route>
