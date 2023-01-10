@@ -283,3 +283,44 @@ padding-left: 20px;
   border-bottom: 1px solid black;
 }
 
+/* CONTACT PAGE */
+
+.contact-title {
+  text-align: center;
+}
+
+.telephone-wrapper {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-top: 1px solid black;
+}
+
+
+.contact-telephone {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact-text {
+  font-size: 13px;
+}
+
+.mail-wrapper {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-top: 1px solid black;
+}
+
+.contact-mail {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
