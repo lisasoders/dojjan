@@ -175,17 +175,42 @@ padding-left: 20px;
 /* FOOTER */ 
 
 .footer-wrapper {
-  display: flex;
-  background-color: black;
+  background-color: rgb(134, 142, 132);
   color: white;
   height: 40vh;
 }
 
-.footer-information {
-  width: 100%;
+.footer-info-wrapper {
   display: flex;
-  flex-direction: column;
- align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 40px;
+}
+
+.footer-title {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-size: 13px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+.footer-icons > svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.footer-contact > a {
+  text-decoration: none;
+  color: white;
 }
 
 /* CART */

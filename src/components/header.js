@@ -38,13 +38,6 @@ function Header({product}) {
                 </div>
                 </div>
                 <h1>DOJJAN</h1>
-                {/* <div className="link-wrapper">
-                    <Link to="/">Startsida</Link>
-                    <Link to="/products">Produkter</Link>
-                    <Link to="/contact">Kontakt</Link>
-                    <Link to="/cart">Varukorg</Link>
-                    <Link to="/admin">Admin</Link>
-                </div> */}
                 <div className="header-icon">
                     <Link to="/cart"><BsCart2 /></Link>
                 </div>
