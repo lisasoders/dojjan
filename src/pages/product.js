@@ -3,11 +3,12 @@ import Axios from 'axios';
 import dummyImg from '../image/dummyImg.png';
 
 
-function Product({id}) {
+function Product() {
 
     // const {productId} = useParams();
 
     const [products, setProducts] = useState([]);
+    // const { id } = useParams();
 
     // console.log(productId, "test")
 
@@ -17,6 +18,8 @@ function Product({id}) {
             setProducts(response.data)
         })
     }, [])
+
+    console.log(products);
 
     return(
         <div className="product-wrapper">

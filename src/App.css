@@ -56,8 +56,10 @@
   height: 1.5em;
 }
 
-.header-wrapper > h1 {
+.header-wrapper > a {
 padding-left: 20px;
+text-decoration: none;
+color: rgb(134, 142, 132);
 }
 
 .link-wrapper {
@@ -92,6 +94,23 @@ padding-left: 20px;
   margin-bottom: 20px;
 }
 
+.startpage-hero {
+  display: flex;
+  justify-content: center;
+}
+
+.startpage-hero > img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.startpage-hero > h1 {
+  position: absolute;
+  z-index: 1;
+  top: 40vh;
+  color: white;
+}
+
 .product-info {
   display: flex;
   width: 100%;
@@ -110,6 +129,44 @@ padding-left: 20px;
 
 .startpage-img {
   width: 50%;
+}
+
+.products-popular {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.nike-popular {
+
+}
+
+.nike-popular > img {
+  width: 200px;
+}
+
+.nb-popular {
+  
+}
+
+.nb-popular > img {
+  width: 200px;
+}
+
+.nikeAir-popular {
+  
+}
+
+.nikeAir-popular > img {
+  width: 200px;
+}
+
+.adidas-popular {
+  
+}
+
+.adidas-popular > img {
+  width: 200px;
 }
 
 /* PRODUCT PAGE */

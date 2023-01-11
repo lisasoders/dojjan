@@ -4,10 +4,42 @@ import dummyImg from '../image/dummyImg.png'
 import ProductId3 from "../components/productId3";
 import ProductId7 from "../components/productId7";
 import GetProducts from "../components/getProducts";
+import adidasStartPage  from '../image/adidas.startpage.jpg';
+import nikePopular  from '../image/nike-popular.jpg';
+import nbPopular  from '../image/nb-popular.jpg';
+import nikeAirPopular  from '../image/nikeAir-popular.jpg';
+import adidasPopular  from '../image/adidas-popular.jpg';
 
 function Startpage() {
     return(
         <div className="startpage-wrapper">
+            <div className="startpage-hero">
+                <img src={adidasStartPage}></img>
+                <h1>Nu ännu bättre pris på fler varor online</h1>
+            </div>
+            <h3>Populära varor</h3>
+            <div className="products-popular">
+                <div className="nike-popular">
+                    {/* Här ska det vara länk till enskild produkt */}
+                    <img src={nikePopular}></img>
+                    <p>Nike Legend Essential</p>
+                </div>
+                <div className="nikeAir-popular">
+                    {/* Här ska det vara länk till enskild produkt */}
+                    <img src={nikeAirPopular}></img>
+                    <p>Air Force 1</p>
+                </div>
+                <div className="nb-popular">
+                    {/* Här ska det vara länk till enskild produkt */}
+                    <img src={nbPopular}></img>
+                    <p>New Balance – 574</p>
+                </div>
+                <div className="adidas-popular">
+                    {/* Här ska det vara länk till enskild produkt */}
+                    <img src={adidasPopular}></img>
+                    <p>Adidas Originals</p>
+                </div>
+            </div>
            <div className="product-info">
             <img className="startpage-img" alt="shoe" src={dummyImg}></img>
                 <div className="startpage-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>

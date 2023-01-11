@@ -31,13 +31,12 @@ function Header({product}) {
                 <div className="hamburger-menu">
                 <RxHamburgerMenu />
                 <div className="dropdown-content">
-                    <Link to="/">Startsida</Link>
                     <Link to="/products">Produkter</Link>
                     <Link to="/contact">Kontakt</Link>
                     <Link to="/admin">Admin</Link>
                 </div>
                 </div>
-                <h1>DOJJAN</h1>
+                <Link to="/"><h1 className="header-title">DOJJAN</h1></Link>
                 <div className="header-icon">
                     <Link to="/cart"><BsCart2 /></Link>
                 </div>
