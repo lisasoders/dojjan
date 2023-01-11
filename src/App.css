@@ -97,6 +97,10 @@ color: rgb(134, 142, 132);
 .startpage-hero {
   display: flex;
   justify-content: center;
+  background-image: url(./image/adidas.startpage.jpg);
+  height: 370px;
+  background-size: cover;
+  background-position: 30%;
 }
 
 .startpage-hero > img {
@@ -109,66 +113,70 @@ color: rgb(134, 142, 132);
   z-index: 1;
   top: 40vh;
   color: white;
-}
-
-.product-info {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  background-color: #e0e2db;
-  }
-
-
-.startpage-text {
-  width: 50%;
-}
-
-.startpage-text > p {
-  padding: 15px;
-}
-
-.startpage-img {
-  width: 50%;
+  text-shadow: 1px 1px 5px #4d4d4d;
 }
 
 .products-popular {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 30px;
 }
 
-.nike-popular {
-
-}
 
 .nike-popular > img {
   width: 200px;
-}
-
-.nb-popular {
-  
 }
 
 .nb-popular > img {
   width: 200px;
 }
 
-.nikeAir-popular {
-  
-}
-
 .nikeAir-popular > img {
   width: 200px;
-}
-
-.adidas-popular {
-  
 }
 
 .adidas-popular > img {
   width: 200px;
 }
 
+.startpage-offer {
+  background-color: #ddd5d0;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.startpage-offer > p {
+  font-size: 13px;
+}
+
+.startpage-products {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.img-big {
+  width: 480px;
+}
+
+.img-small {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 380px;
+}
+
+.img-small > img {
+  width: 380px;
+}
+
+.img-small > h1 {
+  margin: 0;
+}
 /* PRODUCT PAGE */
 
 .products-img {
