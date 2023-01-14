@@ -236,6 +236,42 @@ color: rgb(134, 142, 132);
   cursor: pointer;
 }
 
+/* SINGLE PRODUCT PAGE */
+
+.single-page-wrapper {
+  margin-bottom: 30px;
+}
+
+.single-product {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.single-page-img {
+  width: 50%;
+display: flex;
+gap: 10px;
+}
+.single-page-img > img {
+  width: 350px;
+  gap: 10px;
+}
+
+.single-product-info {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ width: 30%;
+}
+
+.single-product-select {
+  width: 70%;
+  height: 40px;
+}
 
 /* FOOTER */ 
 

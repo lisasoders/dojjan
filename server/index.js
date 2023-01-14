@@ -80,7 +80,7 @@ app.get('/api/get', (req, res) => {
 
 app.get('/api/get/:id', (req, res) => {
     const { id } = req.params;
-    const sqlGet = "SELECT * FROM products WHERE id = ?";
+    const sqlGet = "SELECT * FROM products WHERE product_id = ?";
     db.query(sqlGet, [id], (err, result) => {
         res.send(result);
 
@@ -88,7 +88,7 @@ app.get('/api/get/:id', (req, res) => {
 })
 
 app.get('/api/getId3', (req, res) => {
-    const sqlGet = "SELECT * FROM products WHERE id = 3";
+    const sqlGet = "SELECT * FROM products WHERE product_id = 3";
     db.query(sqlGet, (err, result) => {
         res.send(result);
 

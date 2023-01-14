@@ -22,16 +22,26 @@ function Product() {
     console.log(products);
 
     return(
-        <div className="product-wrapper">
+        <div className="single-page-wrapper">
                 {Array.from(products).map((product) => {
                     return(
-                        <div className="card" key={product.id}>
-                            <p>{id}</p>
-                            <h2>{product.title}</h2>
-                            <img alt="shoe" src={dummyImg} />
-                            <p className="price"> {product.price} kr</p>
-                            <h4> {product.description} </h4>
-                            <h1>hej</h1>
+                        <div className="single-product" key={product.id}>
+                            <div className="single-page-img">
+                                <img alt="shoe" src={dummyImg} />
+                                <img alt="shoe" src={dummyImg} />
+                            </div>
+                            <div className="single-product-info">
+                                <h2>{product.title}</h2>
+                                <p className=""> {product.price} kr</p>
+                                <h4> {product.description} </h4>
+                                <select className="single-product-select">
+                                    <option>Välj storlek</option>
+                                    <option>38</option>
+                                    <option>39</option>
+                                    <option>40</option>
+
+                                </select>
+                            </div>
                         </div>
                 )})}
         </div>
