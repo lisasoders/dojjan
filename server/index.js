@@ -17,6 +17,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 /* POST */
 
+/* POST product */
+
 app.post("/api/post", (req, res) => {
 
     const title = req.body.title;
@@ -27,6 +29,24 @@ app.post("/api/post", (req, res) => {
     const sqlInsert = "INSERT INTO products (title, description, price, image) VALUES (?, ?, ?, ?)";
     db.query(sqlInsert, [title, description, price, image], (err, result) => {
         console.log(result);
+
+    })
+})
+
+/* POST purchase  */
+
+app.post("/api/post/purchase", (req, res) => {
+
+    // const size = req.body.size;
+    const title = req.body.title;
+    const description = req.body.description;
+    const price = req.body.price;
+    // const image = req.body.image;
+    // const product_id = req.body.product_id;
+
+    const sqlInsert = "INSERT INTO `purchases`(`title`, `description`, `price`) VALUES (?, ?, ?)";
+    db.query(sqlInsert, [title, description, price], (err, result) => {
+        console.log(result, "hello");
 
     })
 })
