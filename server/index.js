@@ -3,6 +3,8 @@ const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const multer = require('multer')
+const bufferImage = require("buffer-image");
 
 const db = mysql.createPool({
     host: 'localhost',
@@ -15,6 +17,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+
 /* POST */
 
 /* POST product */
@@ -25,11 +28,24 @@ app.post("/api/post", (req, res) => {
     const description = req.body.description;
     const price = req.body.price;
     const image = req.body.image;
+  
+    console.log(image, "image")
+    console.log(title)
+    
 
     const sqlInsert = "INSERT INTO products (title, description, price, image) VALUES (?, ?, ?, ?)";
     db.query(sqlInsert, [title, description, price, image], (err, result) => {
         console.log(result);
+    })
+})
 
+app.post("/api/img", (req, res) => {
+
+    const productimg = req.body.productimg;
+
+    const sqlInsert = "INSERT INTO users_files (file_src) VALUES (?)";
+    db.query(sqlInsert, [productimg], (err, result) => {
+        console.log(result);
     })
 })
 
@@ -95,6 +111,17 @@ app.get('/api/get', (req, res) => {
 
     })
 })
+
+app.get('/api/get/img', (req, res) => {
+    const sqlGet = "SELECT * FROM users_files";
+    db.query(sqlGet, (err, result) => {
+        res.send(result);
+
+        
+    })
+})
+
+
 
 /* SINGLE GET */
 

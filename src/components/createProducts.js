@@ -7,10 +7,12 @@ function CreateProducts() {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
+    const [productimg, setProductImg] = useState('');
+    
 
     const handleAdd = (e) => {
         e.preventDefault()
-        Axios.post('http://localhost:3001/api/post', {
+        Axios.post('http://localhost:3001/api/post',  {
             title: title,
             description: description,
             price: price,
@@ -20,7 +22,17 @@ function CreateProducts() {
         })
     }
 
-    
+    const handleimg = (e) => {
+        e.preventDefault()
+        Axios.post('http://localhost:3001/api/img',  {
+            productimg: productimg,
+        }).then(() => {
+            alert("successfull post")
+        })
+    }
+
+    console.log(image, "hkj")
+    console.log(productimg, "produktbild")
 
     return(
         <div>
@@ -33,6 +45,10 @@ function CreateProducts() {
             <label>Image</label>
             <input type="file" name="image" onChange={(e) => {setImage(e.target.value)}}></input>
             <button onClick={handleAdd}>Add</button>
+            <div>
+            <input type="file" name="productimg" onChange={(e) => {setProductImg(e.target.value)}}></input>
+            <button onClick={handleimg}>LÄGG TILL</button>
+            </div>
         </div>
     )
 }

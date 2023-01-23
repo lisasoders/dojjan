@@ -24,22 +24,22 @@ function Startpage() {
             <div className="products-popular">
                 <div className="nike-popular">
                     {/* Här ska det vara länk till enskild produkt */}
-                    <img src={nikePopular}></img>
+                    <img alt="shoe" src={nikePopular}></img>
                     <p>Nike Legend Essential</p>
                 </div>
                 <div className="nikeAir-popular">
                     {/* Här ska det vara länk till enskild produkt */}
-                    <img src={nikeAirPopular}></img>
+                    <img alt="shoe" src={nikeAirPopular}></img>
                     <p>Air Force 1</p>
                 </div>
                 <div className="nb-popular">
                     {/* Här ska det vara länk till enskild produkt */}
-                    <img src={nbPopular}></img>
+                    <img alt="shoe" src={nbPopular}></img>
                     <p>New Balance – 574</p>
                 </div>
                 <div className="adidas-popular">
                     {/* Här ska det vara länk till enskild produkt */}
-                    <img src={adidasPopular}></img>
+                    <img alt="shoe" src={adidasPopular}></img>
                     <p>Adidas Originals</p>
                 </div>
             </div>
