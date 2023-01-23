@@ -94,7 +94,11 @@ function Products({addProduct, cartItems, setCartItems}) {
         console.log(cartItem.id);
   }
 
-  
+  const getSize = (e) => {
+    const getSizeId = e.target.value
+
+    console.log(getSizeId)
+  }
   
 
     return(
@@ -109,7 +113,7 @@ function Products({addProduct, cartItems, setCartItems}) {
                             <Link to={`/product/${product.product_id}`} className="products-link"><h2>{product.title}</h2></Link>
                             <p className="price"> {product.price} kr</p>
                             <img alt="shoe" src={product.image} />
-                            <select>
+                            <select onChange={(e) => getSize(e)}>
                                 <option>Välj storlek</option>
                                 <option>38</option>
                                 <option>39</option>
