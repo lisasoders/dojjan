@@ -39,6 +39,27 @@ app.post("/api/post", (req, res) => {
     })
 })
 
+/* POST ORDER */
+
+app.post("/api/post/order", (req, res) => {
+
+    const name = req.body.name;
+    const lastname = req.body.lastname;
+    const email = req.body.email;
+    const zipcode = req.body.zipcode;
+    const location = req.body.location;
+    const street = req.body.street;
+
+    console.log(name)
+    console.log(lastname)
+    
+
+    const sqlInsert = "INSERT INTO orders (name, lastname, email, zipcode, location, street) VALUES (?, ?, ?, ?, ?, ?)";
+    db.query(sqlInsert, [name, lastname, email, zipcode, location, street], (err, result) => {
+        console.log(result);
+    })
+})
+
 app.post("/api/img", (req, res) => {
 
     const productimg = req.body.productimg;

@@ -450,3 +450,17 @@ gap: 10px;
   align-items: center;
 }
 
+/* CHECKOUT */ 
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.checkout-form > input {
+  width: 40%;
+}
+
+
