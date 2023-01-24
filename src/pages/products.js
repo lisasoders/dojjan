@@ -50,19 +50,14 @@ function Products({addProduct, cartItems, setCartItems}) {
     }, [])
 
     console.log(productImg, "productImg")
-    
-
-
    
     // console.log(base64String, "base64String")
-  
 
-
+    /* Get for all the products */
 
     useEffect(() => {
         Axios.get('http://localhost:3001/api/get').then((response) => {
             setProductList(response.data)
-            
         })
     }, [])
 
@@ -70,29 +65,22 @@ function Products({addProduct, cartItems, setCartItems}) {
     // console.log(productList, "produktlista")
     console.log(backenddata, "backenddata")
 
-
-    
-    const handleAdd = (e) => {
-        e.preventDefault()
-        Axios.post('http://localhost:3001/api/post/purchase', {
-            title: title,
-            description: description,
-            price: price,
-        }).then(() => {
-            alert("successfull post")
-        })
-    }
+    /* Function to add the products in cart */
 
   const addToCart = (product) => {
     addProduct(product);
     console.log(product);
   }
 
-  const deletedProduct = (cartItem) => {
-    let deletedProduct = Object.values(cartItems).filter(i => i.id !== cartItem.id)
-        setProductList(deletedProduct)
-        console.log(cartItem.id);
-  }
+  /* function to delete a product, not done */
+
+//   const deletedProduct = (cartItem) => {
+//     let deletedProduct = Object.values(cartItems).filter(i => i.id !== cartItem.id)
+//         setProductList(deletedProduct)
+//         console.log(cartItem.id);
+//   }
+
+  /* Get the value from chosen size */
 
   const getSize = (e) => {
     const getSizeId = e.target.value
@@ -112,17 +100,17 @@ function Products({addProduct, cartItems, setCartItems}) {
                             </div>
                             <Link to={`/product/${product.product_id}`} className="products-link"><h2>{product.title}</h2></Link>
                             <p className="price"> {product.price} kr</p>
-                            <img alt="shoe" src={product.image} />
+                            {/* <img alt="shoe" src={product.image} /> */}
                             <select onChange={(e) => getSize(e)}>
                                 <option>Välj storlek</option>
                                 <option>38</option>
                                 <option>39</option>
                                 <option>40</option>
                             </select>
-                            <p onClick={() => deletedProduct(product)}>ta bort produkt</p>
+                            {/* <p onClick={() => deletedProduct(product)}>ta bort produkt</p> */}
                         </div>
                 )})}
-                <img alt="heeeeeeeeeeej" src={backenddata} />
+                {/* <img alt="heeeeeeeeeeej" src={backenddata} />
                 {Array.from(backenddata).map((product) => {
                     return(
                         <div className="card" key={product.product_id}>
@@ -130,7 +118,7 @@ function Products({addProduct, cartItems, setCartItems}) {
                         </div>
                 )})}
 
-                <img src={`${productImg}`} alt="hjej"/>
+                <img src={`${productImg}`} alt="hjej"/> */}
         </div>
     )
 }

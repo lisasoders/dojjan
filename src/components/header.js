@@ -19,6 +19,8 @@ function Header({product}) {
     const [checkoutItems, setCheckoutItems] = useState([]);
     const [productsInCart, setProductsInCart] = useState([]);
 
+    /* Spred operator for cart items */
+
     const addProduct= (addItems) =>{
 
         setCartItems([
@@ -26,6 +28,8 @@ function Header({product}) {
           addItems,  
         ])
     }
+
+     /* Spred operator for checkout items*/
 
     const addToCheckout= (addItems) =>{
 

@@ -14,34 +14,17 @@ function Cart( {cartItems, setCartItems, addProduct, addToCheckout, checkOutItem
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [image, setImage] = useState('');
-    
 
-    // const title = title;
+    /* Sets the total price to 0, so the price is added and adjusted when there are multiple products in the cart */
 
     var totalPrice = 0;
 
     console.log(purchase, "purchase");
 
-    // const handleAdd = (e) => {
-    //     e.preventDefault()
-    //     Axios.post('http://localhost:3001/api/post/purchase', {
-    //         title: title,
-    //         description: description,
-    //         price: price,
-    //     }).then(() => {
-    //         alert("successfull post")
-    //     })
-
-    //     console.log("TEST")
-    //     console.log(title)
-    //     console.log(description)
-
-    // }
-
     console.log(cartItems, "cartItems")
     console.log(checkOutItems, "checkout")
 
-
+    /* Deleting a product in cart */
 
     const deletedProduct = (cartItem) => {
         let deletedProduct = Object.values(cartItems).filter(i => i.id !== cartItem.id)
@@ -58,6 +41,7 @@ function Cart( {cartItems, setCartItems, addProduct, addToCheckout, checkOutItem
         event.preventDefault();
       }
 
+      /* Shows "din varukorg är tom" when theres no products in cart because of the conditional rendering*/
 
     return(
         <div className="cart-wrapper">

@@ -12,6 +12,8 @@ function RegisterAdmin() {
     const [loggedIn, setLoggedIn] = useState(false)
     const [statusLoggedIn, setStatusLoggedIn] = useState("");
 
+    /* Register an admin */
+
     const handleRegister = (e) => {
         Axios.post('http://localhost:3001/admin/register', {
             username: usernameAdmin, 
@@ -20,6 +22,8 @@ function RegisterAdmin() {
             alert("successfull")
         })
     }
+
+    /* Login for admin */
 
     const handleLogin = (e) => {
         Axios.post('http://localhost:3001/admin/login', {

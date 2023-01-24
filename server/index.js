@@ -6,6 +6,8 @@ const cors = require('cors');
 const multer = require('multer')
 const bufferImage = require("buffer-image");
 
+/* Connection to the database */
+
 const db = mysql.createPool({
     host: 'localhost',
     user: 'root',
@@ -39,7 +41,7 @@ app.post("/api/post", (req, res) => {
     })
 })
 
-/* POST ORDER */
+/* POST an order from checkout */
 
 app.post("/api/post/order", (req, res) => {
 
@@ -60,6 +62,8 @@ app.post("/api/post/order", (req, res) => {
     })
 })
 
+/* trying to post a single image. Still not working */
+
 app.post("/api/img", (req, res) => {
 
     const productimg = req.body.productimg;
@@ -70,25 +74,8 @@ app.post("/api/img", (req, res) => {
     })
 })
 
-/* POST purchase  */
 
-app.post("/api/post/purchase", (req, res) => {
-
-    // const size = req.body.size;
-    const title = req.body.title;
-    const description = req.body.description;
-    const price = req.body.price;
-    // const image = req.body.image;
-    // const product_id = req.body.product_id;
-
-    const sqlInsert = "INSERT INTO `purchases`(`title`, `description`, `price`) VALUES (?, ?, ?)";
-    db.query(sqlInsert, [title, description, price], (err, result) => {
-        console.log(result, "hello");
-
-    })
-})
-
-/* REGISTER */
+/* RRegister an admin */
 
 app.post("/admin/register", (req, res) => {
 
@@ -102,7 +89,7 @@ app.post("/admin/register", (req, res) => {
     })
 })
 
-/* LOGIN */
+/* Login for admin*/
 
 app.post("/admin/login", (req, res) => {
 
@@ -123,7 +110,7 @@ app.post("/admin/login", (req, res) => {
     })
 })
 
-/* GET */
+/* Get all products*/
 
 app.get('/api/get', (req, res) => {
     const sqlGet = "SELECT * FROM products";
@@ -132,6 +119,8 @@ app.get('/api/get', (req, res) => {
 
     })
 })
+
+/* Trying to get a image */
 
 app.get('/api/get/img', (req, res) => {
     const sqlGet = "SELECT * FROM users_files";
@@ -144,7 +133,7 @@ app.get('/api/get/img', (req, res) => {
 
 
 
-/* SINGLE GET */
+/* Get single product */
 
 app.get('/api/get/:id', (req, res) => {
     const { id } = req.params;
@@ -155,23 +144,8 @@ app.get('/api/get/:id', (req, res) => {
     })
 })
 
-app.get('/api/getId3', (req, res) => {
-    const sqlGet = "SELECT * FROM products WHERE product_id = 3";
-    db.query(sqlGet, (err, result) => {
-        res.send(result);
 
-    })
-})
-
-app.get('/api/getId7', (req, res) => {
-    const sqlGet = "SELECT * FROM products WHERE id = 7";
-    db.query(sqlGet, (err, result) => {
-        res.send(result);
-
-    })
-})
-
-/* DELETE */
+/* Trying to delete product */
 
 app.delete('/api/delete', (req, res) => {
     const title = req.body.title
@@ -181,14 +155,6 @@ app.delete('/api/delete', (req, res) => {
 
     })
 })
-
-
-app.get('/', (req, res) => {
-    // const sqlInsert = "INSERT INTO products (title, description, price) VALUES ('adidas', 'black', '220');"
-    // db.query(sqlInsert, (err, result) => {
-    //     res.send("hello world!!");
-    // })
-});
 
 app.listen(3001, () => {
     console.log("running on port 3001");

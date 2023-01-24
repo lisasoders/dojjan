@@ -11,8 +11,10 @@ function Checkout({checkoutItems}) {
     const [zipcode, setZipcode] = useState("")
     const [location, setLocation] = useState("")
     const [street, setStreet] = useState("")
+    const [popup, setPopup] = useState(false)
 
-    
+    /* Post an order to database */
+
     const handleAdd = (e) => {
         e.preventDefault()
         Axios.post('http://localhost:3001/api/post/order',  {
@@ -27,14 +29,11 @@ function Checkout({checkoutItems}) {
         })
     }
 
-    console.log(name)
-    console.log(lastname)
-    console.log(email)
-    console.log(zipcode)
-    console.log(location)
-    console.log(street)
-    
-    console.log(checkoutItems)
+ 
+    const togglePopup = () => {
+        setPopup(!popup)
+      }
+   
     return(
         <div>
             <div>
@@ -61,9 +60,20 @@ function Checkout({checkoutItems}) {
                         <input type="text" name="zipcode" onChange={(e) => {setZipcode(e.target.value)}}/>
                         <label>Ort</label>
                         <input type="text" name="location" onChange={(e) => {setLocation(e.target.value)}}/>
-                        <label>Gata</label>
+                        <label>Gatddda</label>
                         <input type="text" name="street" onChange={(e) => {setStreet(e.target.value)}}/>
-                        <button onClick={handleAdd}>Add</button>
+                        <button className='btn-modal' onClick={(event) => { handleAdd(event); togglePopup(event);}}>Köp</button>
+                        {popup && (
+                        <div className='popup'>
+                        <div className='overlay'>
+                            <div className='popup-content'>
+                                <p>TACK FÖR DITT KÖP!</p>
+                                <button className='close-popup' onClick={togglePopup}>CLOSE</button>
+                            </div>
+                        </div>
+                        </div>
+                        )}
+                       
                     </div>
             </div>
         </div>

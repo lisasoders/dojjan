@@ -6,12 +6,15 @@ import dummyImg from '../image/dummyImg.png';
 
 function Product() {
 
+    /* using useParams() to get the id from clicked product */ 
+
     const {id} = useParams();
 
     const [products, setProducts] = useState([]);
 
     console.log(id, "test")
 
+    /* Gets the single product based on the id */
 
     useEffect(() => {
         Axios.get(`http://localhost:3001/api/get/${id}`).then((response) => {

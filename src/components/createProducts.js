@@ -9,6 +9,7 @@ function CreateProducts() {
     const [image, setImage] = useState('');
     const [productimg, setProductImg] = useState('');
     
+    /* Admin creates a product */
 
     const handleAdd = (e) => {
         e.preventDefault()
@@ -21,6 +22,8 @@ function CreateProducts() {
             alert("successfull post")
         })
     }
+
+    /* Trying to post an image from admin page */
 
     const handleimg = (e) => {
         e.preventDefault()
