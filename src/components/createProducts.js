@@ -48,10 +48,10 @@ function CreateProducts() {
             <label>Image</label>
             <input type="file" name="image" onChange={(e) => {setImage(e.target.value)}}></input>
             <button onClick={handleAdd}>Add</button>
-            <div>
+            {/* <div>
             <input type="file" name="productimg" onChange={(e) => {setProductImg(e.target.value)}}></input>
             <button onClick={handleimg}>LÄGG TILL</button>
-            </div>
+            </div> */}
         </div>
     )
 }

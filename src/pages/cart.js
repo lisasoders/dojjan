@@ -69,7 +69,7 @@ function Cart( {cartItems, setCartItems, addProduct, addToCheckout, checkOutItem
                 <div className="info-box">
                     <p>TOTALT {totalPrice} SEK</p>
                     {/* <button onClick={() => handleAdd}>Köp</button> */}
-                    <Link to="/checkout">checkout</Link>
+                    <Link to="/checkout">Gå till checkout</Link>
                 </div>
             </div>}
         </div>

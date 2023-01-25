@@ -405,6 +405,11 @@ gap: 10px;
   margin-bottom: 5vh;
 }
 
+.info-box > a {
+  text-decoration: none;
+  color: grey;
+}
+
 .cart-line {
   border-bottom: 1px solid black;
 }
@@ -511,4 +516,8 @@ body.active-modal {
   padding: 5px 7px;
 }
 
+/* Admin */
 
+.regLog-admin > h1 {
+  display: none;
+}
